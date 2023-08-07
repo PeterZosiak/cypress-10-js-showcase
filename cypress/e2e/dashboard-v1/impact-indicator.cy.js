@@ -6,7 +6,7 @@ describe('Impact Indicator', () => {
   beforeEach(() => {
     cy.cssDisableMotion();
     cy.clearLocalStorage();
-    cy.login('/home/trait');
+    cy.login('/home/quality');
     cy.navigateToGame(Cypress.env('gameDefault').name);
   });
 
@@ -28,61 +28,61 @@ describe('Impact Indicator', () => {
   }));
 
   qase(213, it('should be able select impact target on Impact Indicator', () => {
-    impactIndicator.selectTraitFromCategory('Psychological traits', 'Physical activity level');
-    impactIndicator.impactItemTraitName().eq(0).should('have.text', 'Internal cohesion');
-    impactIndicator.impactItemTraitName().eq(1).should('have.text', 'None available');
-    impactIndicator.impactItemTraitName().eq(2).should('have.text', 'None available');
+    impactIndicator.selectQualityFromCategory('Psychological qualitys', 'Physical activity level');
+    impactIndicator.impactItemQualityName().eq(0).should('have.text', 'Internal cohesion');
+    impactIndicator.impactItemQualityName().eq(1).should('have.text', 'None available');
+    impactIndicator.impactItemQualityName().eq(2).should('have.text', 'None available');
   }));
 
   qase(211, it('should be able sort list result on Impact Indicator', () => {
-    impactIndicator.searchAndSelectTrait('Usability');
+    impactIndicator.searchAndSelectQuality('Usability');
 
-    impactIndicator.sortTraits('Lowest to highest impact');
-    impactIndicator.impactItemTraitName().eq(0).should('have.text', 'Altruism');
-    impactIndicator.impactItemTraitName().eq(1).should('have.text', 'Internal cohesion');
-    impactIndicator.impactItemTraitName().eq(2).should('have.text', 'Competence');
+    impactIndicator.sortQualitys('Lowest to highest impact');
+    impactIndicator.impactItemQualityName().eq(0).should('have.text', 'Altruism');
+    impactIndicator.impactItemQualityName().eq(1).should('have.text', 'Internal cohesion');
+    impactIndicator.impactItemQualityName().eq(2).should('have.text', 'Competence');
 
-    impactIndicator.sortTraits('Highest to lowest impact');
-    impactIndicator.impactItemTraitName().eq(0).should('have.text', 'Power distance');
-    impactIndicator.impactItemTraitName().eq(1).should('have.text', 'Competence');
-    impactIndicator.impactItemTraitName().eq(2).should('have.text', 'Internal cohesion');
+    impactIndicator.sortQualitys('Highest to lowest impact');
+    impactIndicator.impactItemQualityName().eq(0).should('have.text', 'Power distance');
+    impactIndicator.impactItemQualityName().eq(1).should('have.text', 'Competence');
+    impactIndicator.impactItemQualityName().eq(2).should('have.text', 'Internal cohesion');
 
-    impactIndicator.sortTraits('Negative to positive impact');
-    impactIndicator.impactItemTraitName().eq(0).should('have.text', 'Internal cohesion');
-    impactIndicator.impactItemTraitName().eq(1).should('have.text', 'Competence');
-    impactIndicator.impactItemTraitName().eq(2).should('have.text', 'Power distance');
+    impactIndicator.sortQualitys('Negative to positive impact');
+    impactIndicator.impactItemQualityName().eq(0).should('have.text', 'Internal cohesion');
+    impactIndicator.impactItemQualityName().eq(1).should('have.text', 'Competence');
+    impactIndicator.impactItemQualityName().eq(2).should('have.text', 'Power distance');
 
-    impactIndicator.sortTraits('Positive to negative impact');
-    impactIndicator.impactItemTraitName().eq(0).should('have.text', 'Altruism');
-    impactIndicator.impactItemTraitName().eq(1).should('have.text', 'Power distance');
-    impactIndicator.impactItemTraitName().eq(2).should('have.text', 'Competence');
+    impactIndicator.sortQualitys('Positive to negative impact');
+    impactIndicator.impactItemQualityName().eq(0).should('have.text', 'Altruism');
+    impactIndicator.impactItemQualityName().eq(1).should('have.text', 'Power distance');
+    impactIndicator.impactItemQualityName().eq(2).should('have.text', 'Competence');
 
-    impactIndicator.sortTraits('Lowest to highest traits');
-    impactIndicator.impactItemTraitName().eq(0).should('have.text', 'Altruism');
-    impactIndicator.impactItemTraitName().eq(1).should('have.text', 'Internal cohesion');
-    impactIndicator.impactItemTraitName().eq(2).should('have.text', 'Power distance');
+    impactIndicator.sortQualitys('Lowest to highest qualitys');
+    impactIndicator.impactItemQualityName().eq(0).should('have.text', 'Altruism');
+    impactIndicator.impactItemQualityName().eq(1).should('have.text', 'Internal cohesion');
+    impactIndicator.impactItemQualityName().eq(2).should('have.text', 'Power distance');
 
-    impactIndicator.sortTraits('Highest to lowest traits');
-    impactIndicator.impactItemTraitName().eq(0).should('have.text', 'Competence');
-    impactIndicator.impactItemTraitName().eq(1).should('have.text', 'Power distance');
-    impactIndicator.impactItemTraitName().eq(2).should('have.text', 'Internal cohesion');
+    impactIndicator.sortQualitys('Highest to lowest qualitys');
+    impactIndicator.impactItemQualityName().eq(0).should('have.text', 'Competence');
+    impactIndicator.impactItemQualityName().eq(1).should('have.text', 'Power distance');
+    impactIndicator.impactItemQualityName().eq(2).should('have.text', 'Internal cohesion');
 
     impactIndicator.selectSettings('UX Metrics');
 
-    impactIndicator.sortTraits('Lowest to highest UX metrics');
-    impactIndicator.impactItemTraitName().eq(0).should('have.text', 'Focused attention');
-    impactIndicator.impactItemTraitName().eq(1).should('have.text', 'Aesthetics');
-    impactIndicator.impactItemTraitName().eq(2).should('have.text', 'None available');
+    impactIndicator.sortQualitys('Lowest to highest UX metrics');
+    impactIndicator.impactItemQualityName().eq(0).should('have.text', 'Focused attention');
+    impactIndicator.impactItemQualityName().eq(1).should('have.text', 'Aesthetics');
+    impactIndicator.impactItemQualityName().eq(2).should('have.text', 'None available');
 
-    impactIndicator.sortTraits('Highest to lowest UX metrics');
-    impactIndicator.impactItemTraitName().eq(0).should('have.text', 'Aesthetics');
-    impactIndicator.impactItemTraitName().eq(1).should('have.text', 'Focused attention');
-    impactIndicator.impactItemTraitName().eq(2).should('have.text', 'None available');
+    impactIndicator.sortQualitys('Highest to lowest UX metrics');
+    impactIndicator.impactItemQualityName().eq(0).should('have.text', 'Aesthetics');
+    impactIndicator.impactItemQualityName().eq(1).should('have.text', 'Focused attention');
+    impactIndicator.impactItemQualityName().eq(2).should('have.text', 'None available');
 
   }));
 
   qase(214, it('should be able to open KPI option definition on Impact Indicator', () => {
-    impactIndicator.selectTraitFromCategory('UX metrics', 'Usability');
+    impactIndicator.selectQualityFromCategory('UX metrics', 'Usability');
     impactIndicator.dictionaryDefinition().should('be.visible');
     impactIndicator.dictionaryDefinition().should('have.text', 'Usability is a controlled aspect of user experience design that ensures that the product is easy to use. It includes three key components: intuitiveness, efficiency, and satisfaction.\n');
     impactIndicator.dictionaryDefinition().click();

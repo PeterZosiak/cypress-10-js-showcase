@@ -41,8 +41,8 @@ class ClustersPage {
     return cy.get('[data-testid="tab-item Experience"]');
   }
 
-  clusterTabBtnTraits() {
-    return cy.get('[data-testid="tab-item Traits"]');
+  clusterTabBtnQualitys() {
+    return cy.get('[data-testid="tab-item Qualitys"]');
   }
 
   clusterTabBrnProfile() {
@@ -69,20 +69,20 @@ class ClustersPage {
     return this.communityScore().find('[data-testid="graph-score"]');
   }
 
-  uniqueTraits() {
-    return cy.get('[data-testid="tab-item Unique Traits"]');
+  uniqueQualitys() {
+    return cy.get('[data-testid="tab-item Unique Qualitys"]');
   }
 
-  similiarTraits() {
-    return cy.get('[data-testid="tab-item Similar Traits"]');
+  similiarQualitys() {
+    return cy.get('[data-testid="tab-item Similar Qualitys"]');
   }
 
   howDescribeMyself() {
     return cy.get('[data-testid="how-desc"]');
   }
 
-  howDescribeMyselfLabel(trait) {
-    return this.howDescribeMyself().find(`[data-testid="circle-label"]`).contains(trait);
+  howDescribeMyselfLabel(quality) {
+    return this.howDescribeMyself().find(`[data-testid="circle-label"]`).contains(quality);
   }
 
   myMotivationsWrapper() {
@@ -97,8 +97,8 @@ class ClustersPage {
     return this.myMotivationsWrapper().find('[data-testid="tab-item Lowest"]');
   }
 
-  myMotivationsTraitItem(trait) {
-    return this.myMotivationsWrapper().find(`[class^="_list-item-label_"]`).contains(trait);
+  myMotivationsQualityItem(quality) {
+    return this.myMotivationsWrapper().find(`[class^="_list-item-label_"]`).contains(quality);
   }
 
   myFrustrationWrapper() {
@@ -113,8 +113,8 @@ class ClustersPage {
     return this.myFrustrationWrapper().find('[data-testid="tab-item Lowest"]');
   }
 
-  myFrustrationTraitItem(trait) {
-    return this.myFrustrationWrapper().find(`[class^="_item_"]`).contains(trait);
+  myFrustrationQualityItem(quality) {
+    return this.myFrustrationWrapper().find(`[class^="_item_"]`).contains(quality);
   }
 
   myHopesWrapper() {
@@ -129,8 +129,8 @@ class ClustersPage {
     return this.myHopesWrapper().find('[data-testid="tab-item Lowest"]');
   }
 
-  myHopesTraitItem(trait) {
-    return this.myHopesWrapper().find(`[class^="_item_"]`).contains(trait);
+  myHopesQualityItem(quality) {
+    return this.myHopesWrapper().find(`[class^="_item_"]`).contains(quality);
   }
 
   myValuesWrapper() {
@@ -145,8 +145,8 @@ class ClustersPage {
     return this.myValuesWrapper().find('[data-testid="tab-item Lowest"]');
   }
 
-  myValuesTraitItem(trait) {
-    return this.myValuesWrapper().find(`[class^="_list-item-label_"]`).contains(trait);
+  myValuesQualityItem(quality) {
+    return this.myValuesWrapper().find(`[class^="_list-item-label_"]`).contains(quality);
   }
 
   myCultureWrapper() {
@@ -161,16 +161,16 @@ class ClustersPage {
     return this.myCultureWrapper().find('[data-testid="tab-item Lowest"]');
   }
 
-  myCultureTraitItem(trait) {
-    return this.myCultureWrapper().find(`[class^="_score_"]`).contains(trait);
+  myCultureQualityItem(quality) {
+    return this.myCultureWrapper().find(`[class^="_score_"]`).contains(quality);
   }
 
   myHowSocialWrapper() {
     return cy.get('[data-testid="social"]');
   }
 
-  myHowSocialTraitItem(trait) {
-    return this.myHowSocialWrapper().find(`[class^="_score_"]`).contains(trait);
+  myHowSocialQualityItem(quality) {
+    return this.myHowSocialWrapper().find(`[class^="_score_"]`).contains(quality);
   }
 
   myCompetitionStyleWrapper() {
@@ -185,8 +185,8 @@ class ClustersPage {
     return this.myCompetitionStyleWrapper().find('[data-testid="tab-item Lowest"]');
   }
 
-  myCompetitionStyleTraitItem(trait) {
-    return this.myCompetitionStyleWrapper().find(`[class^="_score_"]`).contains(trait);
+  myCompetitionStyleQualityItem(quality) {
+    return this.myCompetitionStyleWrapper().find(`[class^="_score_"]`).contains(quality);
   }
 
   switchTab(tab) {
@@ -194,8 +194,8 @@ class ClustersPage {
       case 'Experience':
         this.clusterTabBtnExperience().click();
         break;
-      case 'Traits':
-        this.clusterTabBtnTraits().click();
+      case 'Qualitys':
+        this.clusterTabBtnQualitys().click();
         break;
       case 'Profile':
         this.clusterTabBrnProfile().click();

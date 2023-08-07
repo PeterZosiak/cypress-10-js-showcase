@@ -21,8 +21,8 @@ class ImpactIndicatorComponent {
     return this.rootElement().find('[data-testid="category kpis"]');
   }
 
-  categoryPsychologicalTraits() {
-    return this.rootElement().find('[data-testid="category psychological_traits"]');
+  categoryPsychologicalQualitys() {
+    return this.rootElement().find('[data-testid="category psychological_qualitys"]');
   }
 
   categoryUXMetrics() {
@@ -41,16 +41,16 @@ class ImpactIndicatorComponent {
     return this.rootElement().find('[data-testid="impact-item"]');
   }
 
-  impactItemTraitWrapper() {
-    return this.rootElement().find('[data-testid="impact-item-trait-wrapper"]');
+  impactItemQualityWrapper() {
+    return this.rootElement().find('[data-testid="impact-item-quality-wrapper"]');
   }
 
-  impactItemTraitScore() {
-    return this.rootElement().find('[data-testid="impact-item-trait-score"]');
+  impactItemQualityScore() {
+    return this.rootElement().find('[data-testid="impact-item-quality-score"]');
   }
 
-  impactItemTraitName() {
-    return this.rootElement().find('[data-testid="impact-item-trait-name"]');
+  impactItemQualityName() {
+    return this.rootElement().find('[data-testid="impact-item-quality-name"]');
   }
 
   impactItemTagWrapper() {
@@ -120,17 +120,17 @@ class ImpactIndicatorComponent {
     return this.rootElement().find('[class^="_settings-list-item_"]').contains(option);
   }
 
-  searchAndSelectTrait(trait) {
+  searchAndSelectQuality(quality) {
     this.rootElement().should('be.visible');
-    this.searchableDropdown().type(trait);
-    this.categoryOption(trait).click();
+    this.searchableDropdown().type(quality);
+    this.categoryOption(quality).click();
   }
 
-  selectTraitFromCategory(category, trait) {
+  selectQualityFromCategory(category, quality) {
     this.searchableDropdown().click();
     switch (category) {
-      case 'Psychological traits':
-        this.categoryPsychologicalTraits().click();
+      case 'Psychological qualitys':
+        this.categoryPsychologicalQualitys().click();
         break;
       case 'UX metrics':
         this.categoryUXMetrics().click();
@@ -139,10 +139,10 @@ class ImpactIndicatorComponent {
         break;
     }
 
-    this.categoryOption(trait).click();
+    this.categoryOption(quality).click();
 
   }
-  sortTraits(option) {
+  sortQualitys(option) {
     this.sortIcon().click();
     this.sortOption(option).click();
   }

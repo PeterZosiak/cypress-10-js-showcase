@@ -12,8 +12,8 @@
   "newSegment": {
     "existedGame": "dataset 1",
     "existedGameSlug": "dataset-1",
-    "traitScore": "High",
-    "traitPercentage": "47.4"
+    "qualityScore": "High",
+    "qualityPercentage": "47.4"
   },
   "uxMetrics": {
     "Endurability": {

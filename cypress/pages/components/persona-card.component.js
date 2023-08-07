@@ -9,8 +9,8 @@ class PersonaCard {
     return this.personaCard().find('[data-testid="persona-info"]');
   }
 
-  personaInfoTabTraits() {
-    return this.personaInfo().find('[data-testid="tab-item Traits"]');
+  personaInfoTabQualitys() {
+    return this.personaInfo().find('[data-testid="tab-item Qualitys"]');
   }
 
   personaInfoTabUXMetrics() {

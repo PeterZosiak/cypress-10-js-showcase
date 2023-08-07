@@ -77,8 +77,8 @@ class HomePage {
     return cy.get('[role="button"]').contains("Ask us to craft a custom audience");
   }
 
-  traitsTab() {
-    return cy.get('[data-testid="tab-item Traits"]');
+  qualitysTab() {
+    return cy.get('[data-testid="tab-item Qualitys"]');
   }
 
   navigatorTab() {
@@ -106,8 +106,8 @@ class HomePage {
 
   switchTab(tab) {
     switch (tab) {
-      case 'Traits':
-        this.traitsTab().click();
+      case 'Qualitys':
+        this.qualitysTab().click();
         break;
       case 'Navigator':
         this.navigatorTab().click();

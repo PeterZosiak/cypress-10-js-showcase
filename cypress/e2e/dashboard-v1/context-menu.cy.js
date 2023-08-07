@@ -9,7 +9,7 @@ describe('Context menu', () => {
   beforeEach(() => {
     cy.cssDisableMotion();
     cy.clearLocalStorage();
-    cy.login('/home/trait');
+    cy.login('/home/quality');
     cy.navigateToGame(Cypress.env('gameDefault').name);
   });
 
@@ -67,7 +67,7 @@ describe('Context menu', () => {
     contextMenu.footerLabel().should('be.visible');
   }
 
-  function validateTraitContextMenu(title, subtitle, score, scoreTitle, hasDefinition = true) {
+  function validateQualityContextMenu(title, subtitle, score, scoreTitle, hasDefinition = true) {
     contextMenu.contextMenu().should('be.visible');
     contextMenu.contextMenu().should('have.css', 'border-radius', '8px')
       .and('have.css', 'padding', '5px')
@@ -118,7 +118,7 @@ describe('Context menu', () => {
         .and('have.css', 'color', 'rgb(29, 48, 84)');
 
       contextMenu.sectionTitleDeepDive().should('be.visible');
-      contextMenu.sectionTitleDeepDive().should('have.text', 'Acquiring players with this trait')
+      contextMenu.sectionTitleDeepDive().should('have.text', 'Acquiring players with this quality')
         .and('have.css', 'font-size', '18px')
         .and('have.css', 'font-weight', '700')
         .and('have.css', 'line-height', '20px')
@@ -258,61 +258,61 @@ describe('Context menu', () => {
     contextMenu.contextMenu().should('be.visible');
   }));
 
-  qase(181, it('should be able to open Trait Context menu on click', () => {
-    clustersPage.switchTab('Traits');
+  qase(181, it('should be able to open Quality Context menu on click', () => {
+    clustersPage.switchTab('Qualitys');
 
-    clustersPage.uniqueTraits().click();
-    cy.get('[data-testid="unique-traits"]').find('p').contains(Cypress.env('uniqueTraits').Trait.title).click();
-    validateTraitContextMenu(
-      Cypress.env('uniqueTraits').Trait.title,
-      Cypress.env('uniqueTraits').Trait.subtitle,
-      Cypress.env('uniqueTraits').Trait.score,
-      Cypress.env('uniqueTraits').Trait.scoreTitle,
-      Cypress.env('uniqueTraits').Trait.haveDefinition,
+    clustersPage.uniqueQualitys().click();
+    cy.get('[data-testid="unique-qualitys"]').find('p').contains(Cypress.env('uniqueQualitys').Quality.title).click();
+    validateQualityContextMenu(
+      Cypress.env('uniqueQualitys').Quality.title,
+      Cypress.env('uniqueQualitys').Quality.subtitle,
+      Cypress.env('uniqueQualitys').Quality.score,
+      Cypress.env('uniqueQualitys').Quality.scoreTitle,
+      Cypress.env('uniqueQualitys').Quality.haveDefinition,
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
-    cy.contains(Cypress.env('uniqueTraits').Trait.title).should('be.visible');
-    cy.contains(Cypress.env('uniqueTraits').Trait.explorerCategory).should('be.visible');
+    cy.url().should('include', '/quality-explorer');
+    cy.contains(Cypress.env('uniqueQualitys').Quality.title).should('be.visible');
+    cy.contains(Cypress.env('uniqueQualitys').Quality.explorerCategory).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    clustersPage.similiarTraits().click();
-    cy.get('[data-testid="similar-traits"]').find('p').contains(Cypress.env('similarTraits').Trait.title).click();
-    validateTraitContextMenu(
-      Cypress.env('similarTraits').Trait.title,
-      Cypress.env('similarTraits').Trait.subtitle,
-      Cypress.env('similarTraits').Trait.score,
-      Cypress.env('similarTraits').Trait.scoreTitle,
-      Cypress.env('similarTraits').Trait.haveDefinition,
+    clustersPage.similiarQualitys().click();
+    cy.get('[data-testid="similar-qualitys"]').find('p').contains(Cypress.env('similarQualitys').Quality.title).click();
+    validateQualityContextMenu(
+      Cypress.env('similarQualitys').Quality.title,
+      Cypress.env('similarQualitys').Quality.subtitle,
+      Cypress.env('similarQualitys').Quality.score,
+      Cypress.env('similarQualitys').Quality.scoreTitle,
+      Cypress.env('similarQualitys').Quality.haveDefinition,
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
-    cy.contains(Cypress.env('similarTraits').Trait.title).should('be.visible');
-    cy.contains(Cypress.env('similarTraits').Trait.subtitle).should('be.visible');
+    cy.url().should('include', '/quality-explorer');
+    cy.contains(Cypress.env('similarQualitys').Quality.title).should('be.visible');
+    cy.contains(Cypress.env('similarQualitys').Quality.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    impactIndicator.searchAndSelectTrait('Sleep');
+    impactIndicator.searchAndSelectQuality('Sleep');
     impactIndicator.impactItem().eq(0).click();
-    validateTraitContextMenu(
-      Cypress.env('impactIndicator').Trait.title,
-      Cypress.env('impactIndicator').Trait.subtitle,
-      Cypress.env('impactIndicator').Trait.score,
-      Cypress.env('impactIndicator').Trait.scoreTitle,
-      Cypress.env('impactIndicator').Trait.haveDefinition);
+    validateQualityContextMenu(
+      Cypress.env('impactIndicator').Quality.title,
+      Cypress.env('impactIndicator').Quality.subtitle,
+      Cypress.env('impactIndicator').Quality.score,
+      Cypress.env('impactIndicator').Quality.scoreTitle,
+      Cypress.env('impactIndicator').Quality.haveDefinition);
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
-    cy.contains(Cypress.env('impactIndicator').Trait.title).should('be.visible');
-    cy.contains(Cypress.env('impactIndicator').Trait.explorerCategory).should('be.visible');
+    cy.url().should('include', '/quality-explorer');
+    cy.contains(Cypress.env('impactIndicator').Quality.title).should('be.visible');
+    cy.contains(Cypress.env('impactIndicator').Quality.explorerCategory).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
     sidebarGameMenu.navigate('Personas');
-    clustersPage.switchTab('Traits');
+    clustersPage.switchTab('Qualitys');
 
-    clustersPage.howDescribeMyselfLabel(Cypress.env('howDescribeMyself').High.traitTitle).click();
-    validateTraitContextMenu(
+    clustersPage.howDescribeMyselfLabel(Cypress.env('howDescribeMyself').High.qualityTitle).click();
+    validateQualityContextMenu(
       Cypress.env('howDescribeMyself').High.title,
       Cypress.env('howDescribeMyself').High.subtitle,
       Cypress.env('howDescribeMyself').High.score,
@@ -320,13 +320,13 @@ describe('Context menu', () => {
       Cypress.env('howDescribeMyself').High.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('howDescribeMyself').High.title).should('be.visible');
     cy.contains(Cypress.env('howDescribeMyself').High.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
-    clustersPage.howDescribeMyselfLabel(Cypress.env('howDescribeMyself').Low.traitTitle).click();
-    validateTraitContextMenu(
+    clustersPage.howDescribeMyselfLabel(Cypress.env('howDescribeMyself').Low.qualityTitle).click();
+    validateQualityContextMenu(
       Cypress.env('howDescribeMyself').Low.title,
       Cypress.env('howDescribeMyself').Low.subtitle,
       Cypress.env('howDescribeMyself').Low.score,
@@ -334,14 +334,14 @@ describe('Context menu', () => {
       Cypress.env('howDescribeMyself').Low.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('howDescribeMyself').Low.title).should('be.visible');
     cy.contains(Cypress.env('howDescribeMyself').Low.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    clustersPage.myMotivationsTraitItem(Cypress.env('myMotivations').High.title).click();
-    validateTraitContextMenu(
+    clustersPage.myMotivationsQualityItem(Cypress.env('myMotivations').High.title).click();
+    validateQualityContextMenu(
       Cypress.env('myMotivations').High.title,
       Cypress.env('myMotivations').High.subtitle,
       Cypress.env('myMotivations').High.score,
@@ -349,14 +349,14 @@ describe('Context menu', () => {
       Cypress.env('myMotivations').High.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myMotivations').High.title).should('be.visible');
     cy.contains(Cypress.env('myMotivations').High.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
     clustersPage.myMotivationsTabLowest().click();
-    clustersPage.myMotivationsTraitItem(Cypress.env('myMotivations').Low.title).click();
-    validateTraitContextMenu(
+    clustersPage.myMotivationsQualityItem(Cypress.env('myMotivations').Low.title).click();
+    validateQualityContextMenu(
       Cypress.env('myMotivations').Low.title,
       Cypress.env('myMotivations').Low.subtitle,
       Cypress.env('myMotivations').Low.score,
@@ -364,15 +364,15 @@ describe('Context menu', () => {
       Cypress.env('myMotivations').Low.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myMotivations').Low.title).should('be.visible');
     cy.contains(Cypress.env('myMotivations').Low.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    clustersPage.switchTab('Traits');
-    clustersPage.myFrustrationTraitItem(Cypress.env('myFrustrations').High.title).click();
-    validateTraitContextMenu(
+    clustersPage.switchTab('Qualitys');
+    clustersPage.myFrustrationQualityItem(Cypress.env('myFrustrations').High.title).click();
+    validateQualityContextMenu(
       Cypress.env('myFrustrations').High.title,
       Cypress.env('myFrustrations').High.subtitle,
       Cypress.env('myFrustrations').High.score,
@@ -380,14 +380,14 @@ describe('Context menu', () => {
       Cypress.env('myFrustrations').High.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myFrustrations').High.explorerCategory).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
-    clustersPage.switchTab('Traits');
+    clustersPage.switchTab('Qualitys');
     clustersPage.myFrustrationTabLowest().click();
-    clustersPage.myFrustrationTraitItem(Cypress.env('myFrustrations').Low.title).click();
-    validateTraitContextMenu(
+    clustersPage.myFrustrationQualityItem(Cypress.env('myFrustrations').Low.title).click();
+    validateQualityContextMenu(
       Cypress.env('myFrustrations').Low.title,
       Cypress.env('myFrustrations').Low.subtitle,
       Cypress.env('myFrustrations').Low.score,
@@ -395,14 +395,14 @@ describe('Context menu', () => {
       Cypress.env('myFrustrations').Low.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myFrustrations').High.explorerCategory).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    clustersPage.switchTab('Traits');
-    clustersPage.myHopesTraitItem(Cypress.env('myHopes').High.title).click();
-    validateTraitContextMenu(
+    clustersPage.switchTab('Qualitys');
+    clustersPage.myHopesQualityItem(Cypress.env('myHopes').High.title).click();
+    validateQualityContextMenu(
       Cypress.env('myHopes').High.title,
       Cypress.env('myHopes').High.subtitle,
       Cypress.env('myHopes').High.score,
@@ -410,14 +410,14 @@ describe('Context menu', () => {
       Cypress.env('myHopes').High.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myHopes').High.subtitle).should('be.visible');
     cy.wait(5000).go('back').wait(5000).go('back').wait(5000);
 
-    clustersPage.switchTab('Traits');
+    clustersPage.switchTab('Qualitys');
     clustersPage.myHopesTabLowest().click();
-    clustersPage.myHopesTraitItem(Cypress.env('myHopes').Low.title).click();
-    validateTraitContextMenu(
+    clustersPage.myHopesQualityItem(Cypress.env('myHopes').Low.title).click();
+    validateQualityContextMenu(
       Cypress.env('myHopes').Low.title,
       Cypress.env('myHopes').Low.subtitle,
       Cypress.env('myHopes').Low.score,
@@ -425,14 +425,14 @@ describe('Context menu', () => {
       Cypress.env('myHopes').Low.haveDefinition
     );
     contextMenu.deepDiveBtn().click().wait(2000);
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myHopes').High.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    clustersPage.switchTab('Traits');
-    clustersPage.myValuesTraitItem(Cypress.env('myValues').High.title).click();
-    validateTraitContextMenu(
+    clustersPage.switchTab('Qualitys');
+    clustersPage.myValuesQualityItem(Cypress.env('myValues').High.title).click();
+    validateQualityContextMenu(
       Cypress.env('myValues').High.title,
       Cypress.env('myValues').High.subtitle,
       Cypress.env('myValues').High.score,
@@ -440,15 +440,15 @@ describe('Context menu', () => {
       Cypress.env('myValues').High.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myValues').High.explorerCategory).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    clustersPage.switchTab('Traits');
+    clustersPage.switchTab('Qualitys');
     clustersPage.myValuesTabLowest().click();
-    clustersPage.myValuesTraitItem(Cypress.env('myValues').Low.title).click();
-    validateTraitContextMenu(
+    clustersPage.myValuesQualityItem(Cypress.env('myValues').Low.title).click();
+    validateQualityContextMenu(
       Cypress.env('myValues').Low.title,
       Cypress.env('myValues').Low.subtitle,
       Cypress.env('myValues').Low.score,
@@ -456,14 +456,14 @@ describe('Context menu', () => {
       Cypress.env('myValues').Low.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myValues').Low.explorerCategory).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    clustersPage.switchTab('Traits');
-    clustersPage.myCultureTraitItem(Cypress.env('myCulture').High.title).click();
-    validateTraitContextMenu(
+    clustersPage.switchTab('Qualitys');
+    clustersPage.myCultureQualityItem(Cypress.env('myCulture').High.title).click();
+    validateQualityContextMenu(
       Cypress.env('myCulture').High.title,
       Cypress.env('myCulture').High.subtitle,
       Cypress.env('myCulture').High.score,
@@ -471,15 +471,15 @@ describe('Context menu', () => {
       Cypress.env('myCulture').High.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myCulture').High.title).should('be.visible');
     cy.contains(Cypress.env('myCulture').High.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
-    clustersPage.switchTab('Traits');
+    clustersPage.switchTab('Qualitys');
     clustersPage.myCultureTabLowest().click();
-    clustersPage.myCultureTraitItem(Cypress.env('myCulture').Low.title).click();
-    validateTraitContextMenu(
+    clustersPage.myCultureQualityItem(Cypress.env('myCulture').Low.title).click();
+    validateQualityContextMenu(
       Cypress.env('myCulture').Low.title,
       Cypress.env('myCulture').Low.subtitle,
       Cypress.env('myCulture').Low.score,
@@ -487,31 +487,31 @@ describe('Context menu', () => {
       Cypress.env('myCulture').Low.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myCulture').Low.title).should('be.visible');
     cy.contains(Cypress.env('myCulture').Low.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    clustersPage.switchTab('Traits');
-    clustersPage.myHowSocialTraitItem(Cypress.env('howSocialIam').Trait.title).click();
-    validateTraitContextMenu(
-      Cypress.env('howSocialIam').Trait.title,
-      Cypress.env('howSocialIam').Trait.subtitle,
-      Cypress.env('howSocialIam').Trait.score,
-      Cypress.env('howSocialIam').Trait.scoreTitle,
-      Cypress.env('howSocialIam').Trait.haveDefinition
+    clustersPage.switchTab('Qualitys');
+    clustersPage.myHowSocialQualityItem(Cypress.env('howSocialIam').Quality.title).click();
+    validateQualityContextMenu(
+      Cypress.env('howSocialIam').Quality.title,
+      Cypress.env('howSocialIam').Quality.subtitle,
+      Cypress.env('howSocialIam').Quality.score,
+      Cypress.env('howSocialIam').Quality.scoreTitle,
+      Cypress.env('howSocialIam').Quality.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
-    cy.contains(Cypress.env('howSocialIam').Trait.title).should('be.visible');
-    cy.contains(Cypress.env('howSocialIam').Trait.subtitle).should('be.visible');
+    cy.url().should('include', '/quality-explorer');
+    cy.contains(Cypress.env('howSocialIam').Quality.title).should('be.visible');
+    cy.contains(Cypress.env('howSocialIam').Quality.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
 
-    clustersPage.switchTab('Traits');
-    clustersPage.myCompetitionStyleTraitItem(Cypress.env('myCompetitionStyle').High.title).click();
-    validateTraitContextMenu(
+    clustersPage.switchTab('Qualitys');
+    clustersPage.myCompetitionStyleQualityItem(Cypress.env('myCompetitionStyle').High.title).click();
+    validateQualityContextMenu(
       Cypress.env('myCompetitionStyle').High.title,
       Cypress.env('myCompetitionStyle').High.subtitle,
       Cypress.env('myCompetitionStyle').High.score,
@@ -519,15 +519,15 @@ describe('Context menu', () => {
       Cypress.env('myCompetitionStyle').High.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myCompetitionStyle').High.title).should('be.visible');
     cy.contains(Cypress.env('myCompetitionStyle').High.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);
 
-    clustersPage.switchTab('Traits');
+    clustersPage.switchTab('Qualitys');
     clustersPage.myCompetitionStyleTabLowest().click();
-    clustersPage.myCompetitionStyleTraitItem(Cypress.env('myCompetitionStyle').Low.title).click();
-    validateTraitContextMenu(
+    clustersPage.myCompetitionStyleQualityItem(Cypress.env('myCompetitionStyle').Low.title).click();
+    validateQualityContextMenu(
       Cypress.env('myCompetitionStyle').Low.title,
       Cypress.env('myCompetitionStyle').Low.subtitle,
       Cypress.env('myCompetitionStyle').Low.score,
@@ -535,7 +535,7 @@ describe('Context menu', () => {
       Cypress.env('myCompetitionStyle').Low.haveDefinition
     );
     contextMenu.deepDiveBtn().click();
-    cy.url().should('include', '/trait-explorer');
+    cy.url().should('include', '/quality-explorer');
     cy.contains(Cypress.env('myCompetitionStyle').Low.title).should('be.visible');
     cy.contains(Cypress.env('myCompetitionStyle').Low.subtitle).should('be.visible');
     cy.wait(5000).go('back').go('back').wait(2000);

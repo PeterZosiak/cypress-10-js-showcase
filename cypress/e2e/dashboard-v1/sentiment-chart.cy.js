@@ -12,7 +12,7 @@ describe.skip('Sentiment chart', { scrollBehavior: false }, () => {
       window.localStorage.setItem('sentimentChartTimeline', 'month');
     });
 
-    cy.login('/home/trait');
+    cy.login('/home/quality');
     cy.navigateToGame(Cypress.env('gameDefault').name);
     // Scroll to view because Hover CSS validation does not work with auto-scroll
     sentimentChart.sentimentChart()

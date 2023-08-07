@@ -7,7 +7,7 @@ on:
 
 jobs:
   docker-build-push:
-    uses: 12traits/github-action-workflows/.github/workflows/docker-push.yml@main
+    uses: PeterZosiak/github-action-workflows/.github/workflows/docker-push.yml@main
     secrets:
       gcp-project-id: ${{ secrets.GKE_PROJECT_ID }}
       gcp-sa-json: ${{ secrets.GCP_IMAGE_PUSH_SA_KEY }}

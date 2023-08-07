@@ -17,8 +17,8 @@ class SidebarGameMenu {
     return this.sidebarGameMenu().find('[data-testid="menu-item"]').contains('Personas');
   }
 
-  traitsBtn() {
-    return this.sidebarGameMenu().find('[data-testid="menu-item"]').contains('Traits');
+  qualitysBtn() {
+    return this.sidebarGameMenu().find('[data-testid="menu-item"]').contains('Qualitys');
   }
 
   actionsBtn() {
@@ -56,8 +56,8 @@ class SidebarGameMenu {
       case 'Personas':
         this.personasBtn().click();
         break;
-      case 'Traits':
-        this.traitsBtn().click();
+      case 'Qualitys':
+        this.qualitysBtn().click();
         break;
       case 'Actions':
         this.actionsBtn().click();

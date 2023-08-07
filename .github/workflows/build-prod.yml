@@ -6,11 +6,11 @@ on:
       - "master"
 jobs:
   github-release:
-    uses: 12traits/github-action-workflows/.github/workflows/github-release.yml@main
+    uses: PeterZosiak/github-action-workflows/.github/workflows/github-release.yml@main
     secrets:
       gh-token: ${{ secrets.GITHUB_TOKEN }}
   docker-build-push:
-    uses: 12traits/github-action-workflows/.github/workflows/docker-push.yml@main
+    uses: PeterZosiak/github-action-workflows/.github/workflows/docker-push.yml@main
     needs: github-release
     secrets:
       gcp-project-id: ${{ secrets.GKE_PROJECT_ID }}

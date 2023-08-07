@@ -1,54 +1,54 @@
 /// <reference types="cypress" />
 
-class TraitsExplorerPage {
+class QualitysExplorerPage {
   // Page elements
 
   cultureMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-culture"]');
+    return cy.get('[data-testid="qualitys-menu-item-culture"]');
   }
 
   valuesMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-values"]');
+    return cy.get('[data-testid="qualitys-menu-item-values"]');
   }
 
   communicationMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-communication"]');
+    return cy.get('[data-testid="qualitys-menu-item-communication"]');
   }
 
   personalityMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-personality"]');
+    return cy.get('[data-testid="qualitys-menu-item-personality"]');
   }
 
   motivationMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-motivation"]');
+    return cy.get('[data-testid="qualitys-menu-item-motivation"]');
   }
 
   competitivenessMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-competitiveness"]');
+    return cy.get('[data-testid="qualitys-menu-item-competitiveness"]');
   }
 
   activitiesMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-activities"]');
+    return cy.get('[data-testid="qualitys-menu-item-activities"]');
   }
 
   hopesAspirationsMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-hopes&aspirations"]');
+    return cy.get('[data-testid="qualitys-menu-item-hopes&aspirations"]');
   }
 
   painPointsMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-painpoints"]');
+    return cy.get('[data-testid="qualitys-menu-item-painpoints"]');
   }
 
   techUsageMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-techusage"]');
+    return cy.get('[data-testid="qualitys-menu-item-techusage"]');
   }
 
   emotionsMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-emotions"]');
+    return cy.get('[data-testid="qualitys-menu-item-emotions"]');
   }
 
   wellBeingMenuItem() {
-    return cy.get('[data-testid="traits-menu-item-well-being"]');
+    return cy.get('[data-testid="qualitys-menu-item-well-being"]');
   }
 
   topActionTitle() {
@@ -59,8 +59,8 @@ class TraitsExplorerPage {
     return cy.get('[data-testid="top-action-button"]');
   }
 
-  switchTrait(trait) {
-    switch (trait) {
+  switchQuality(quality) {
+    switch (quality) {
       case 'Culture':
         this.cultureMenuItem().click();
         break;
@@ -103,4 +103,4 @@ class TraitsExplorerPage {
   }
 }
 
-export default new TraitsExplorerPage();
+export default new QualitysExplorerPage();
