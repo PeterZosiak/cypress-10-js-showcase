@@ -1,0 +1,17 @@
+name: build-staging
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "develop"
+
+jobs:
+  docker-build-push:
+    uses: 12traits/github-action-workflows/.github/workflows/docker-push.yml@main
+    secrets:
+      gcp-project-id: ${{ secrets.GKE_PROJECT_ID }}
+      gcp-sa-json: ${{ secrets.GCP_IMAGE_PUSH_SA_KEY }}
+      gh-token: ${{ secrets.ORG_GITHUB_TOKEN }}
+      slack-build-webhook: ${{ secrets.SLACK_BUILD_WEBHOOK }}
+    with:
+      repository-base-name: testing

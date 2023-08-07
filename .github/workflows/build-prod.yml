@@ -1,0 +1,22 @@
+name: build-prod
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "master"
+jobs:
+  github-release:
+    uses: 12traits/github-action-workflows/.github/workflows/github-release.yml@main
+    secrets:
+      gh-token: ${{ secrets.GITHUB_TOKEN }}
+  docker-build-push:
+    uses: 12traits/github-action-workflows/.github/workflows/docker-push.yml@main
+    needs: github-release
+    secrets:
+      gcp-project-id: ${{ secrets.GKE_PROJECT_ID }}
+      gcp-sa-json: ${{ secrets.GCP_IMAGE_PUSH_SA_KEY }}
+      gh-token: ${{ secrets.ORG_GITHUB_TOKEN }}
+      slack-build-webhook: ${{ secrets.SLACK_BUILD_WEBHOOK }}
+    with:
+      repository-base-name: testing
+      docker-tag: ${{ needs.github-release.outputs.semver }}

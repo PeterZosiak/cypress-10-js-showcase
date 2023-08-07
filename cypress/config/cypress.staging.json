@@ -1,0 +1,250 @@
+{
+  "baseUrl": "",
+  "email": "",
+  "password": "",
+  "emailAgnostic": "",
+  "passwordAgnostic": "",
+  "shouldDoVisualRegression": true,
+  "gameDefault": {
+    "name": "dataset 1",
+    "slug": "dataset-1"
+  },
+  "gameAgnostic": {
+    "name": "Industry Agnostic App/Product",
+    "slug": "industry-agnostic-app-product"
+  },
+  "home": {
+    "existedGame": "dataset 1",
+    "existedGameSlug": "dataset-1",
+    "existedGamePcs": "58",
+    "existingGamesLength": "2"
+  },
+  "newSegment": {
+    "existedGame": "dataset 1",
+    "existedGameSlug": "dataset-1",
+    "traitScore": "High",
+    "traitPercentage": "47.4"
+  },
+  "uxMetrics": {
+    "Endurability": {
+      "name": "Endurability",
+      "score": "52",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Novelty": {
+      "name": "Novelty",
+      "score": "52",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Aesthetics": {
+      "name": "Aesthetics",
+      "score": "50",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Usability": {
+      "name": "Usability",
+      "score": "74",
+      "color": "rgb(109, 231, 130)"
+    },
+    "Attention": {
+      "name": "Attention",
+      "score": "42",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Involvement": {
+      "name": "Involvement",
+      "score": "50",
+      "color": "rgb(255, 201, 2)"
+    }
+  },
+  "myUxMetrics": {
+    "Endurability": {
+      "name": "Endurability",
+      "score": "52",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Novelty": {
+      "name": "Novelty",
+      "score": "53",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Aesthetics": {
+      "name": "Aesthetics",
+      "score": "51",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Usability": {
+      "name": "Usability",
+      "score": "74",
+      "color": "rgb(109, 231, 130)"
+    },
+    "Attention": {
+      "name": "Attention",
+      "score": "43",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Involvement": {
+      "name": "Involvement",
+      "score": "50",
+      "color": "rgb(255, 201, 2)"
+    }
+  },
+  "uniqueTraits": {
+    "Trait": {
+      "title": "Persistence",
+      "subtitle": "Motivators",
+      "score": "55",
+      "scoreTitle": "Average",
+      "haveDefinition": true,
+      "explorerCategory": "Motivation"
+    }
+  },
+  "similarTraits": {
+    "Trait": {
+      "title": "Openness",
+      "subtitle": "Personality",
+      "score": "52",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    }
+  },
+  "impactIndicator": {
+    "Trait": {
+      "title": "Compensatory effort",
+      "subtitle": "Motivators",
+      "score": "60",
+      "scoreTitle": "Average",
+      "haveDefinition": false,
+      "explorerCategory": "Motivation"
+    }
+  },
+  "howDescribeMyself": {
+    "High": {
+      "traitTitle": "Anxious",
+      "title": "Anxiety",
+      "subtitle": "Personality",
+      "score": "59",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    },
+    "Low": {
+      "traitTitle": "Impulsive",
+      "title": "Impulsiveness",
+      "subtitle": "Personality",
+      "score": "46",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    }
+  },
+  "myMotivations": {
+    "High": {
+      "title": "Pride in productivity",
+      "subtitle": "Motivation",
+      "score": "63",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    },
+    "Low": {
+      "title": "Independence",
+      "subtitle": "Motivation",
+      "score": "51",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    }
+  },
+  "myFrustrations": {
+    "High": {
+      "title": "No connection with others",
+      "subtitle": "Hopes & Aspirations",
+      "score": "41",
+      "scoreTitle": "Average",
+      "haveDefinition": false,
+      "explorerCategory": "Pain Points"
+    },
+    "Low": {
+      "title": "Unfair player matching",
+      "subtitle": "Hopes & Aspirations",
+      "score": "1",
+      "scoreTitle": "Very Low",
+      "haveDefinition": false,
+      "explorerCategory": "Pain Points"
+    }
+  },
+  "myHopes": {
+    "High": {
+      "title": "Being recognized",
+      "subtitle": "Hopes & Aspirations",
+      "score": "50",
+      "scoreTitle": "Average",
+      "haveDefinition": false
+    },
+    "Low": {
+      "title": "Being inspired",
+      "subtitle": "Hopes & Aspirations",
+      "score": "1",
+      "scoreTitle": "Very Low",
+      "haveDefinition": true
+    }
+  },
+  "myValues": {
+    "High": {
+      "title": "Family",
+      "subtitle": "Hopes & Aspirations",
+      "score": "27",
+      "scoreTitle": "Low",
+      "haveDefinition": false,
+      "explorerCategory": "Values"
+    },
+    "Low": {
+      "title": "Job security",
+      "subtitle": "Hopes & Aspirations",
+      "score": "4",
+      "scoreTitle": "Very Low",
+      "haveDefinition": false,
+      "explorerCategory": "Values"
+    }
+  },
+  "myCulture": {
+    "High": {
+      "title": "Long term orientation",
+      "subtitle": "Culture",
+      "score": "53",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    },
+    "Low": {
+      "title": "Indulgence",
+      "subtitle": "Culture",
+      "score": "46",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    }
+  },
+  "howSocialIam": {
+    "Trait": {
+      "title": "Social well-being",
+      "subtitle": "Well-Being",
+      "score": "54",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    }
+  },
+  "myCompetitionStyle": {
+    "High": {
+      "title": "Personal enhancement",
+      "subtitle": "Competitiveness",
+      "score": "54",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    },
+    "Low": {
+      "title": "Competitive affectivity",
+      "subtitle": "Competitiveness",
+      "score": "49",
+      "scoreTitle": "Average",
+      "haveDefinition": true
+    }
+  },
+  "communityScore": "43",
+  "personaCount": 5
+}

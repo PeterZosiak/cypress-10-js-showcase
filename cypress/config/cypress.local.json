@@ -1,0 +1,82 @@
+{
+  "baseUrl": "",
+  "email": "",
+  "password": "",
+  "shouldDoVisualRegression": true,
+  "home": {
+    "existedGame": "dataset 1",
+    "existedGameSlug": "dataset-1",
+    "existedGamePcs": "58",
+    "existingGamesLength": "2"
+  },
+  "newSegment": {
+    "existedGame": "dataset 1",
+    "existedGameSlug": "dataset-1",
+    "traitScore": "High",
+    "traitPercentage": "47.4"
+  },
+  "uxMetrics": {
+    "Endurability": {
+      "name": "Endurability",
+      "score": "52",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Novelty": {
+      "name": "Novelty",
+      "score": "52",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Aesthetics": {
+      "name": "Aesthetics",
+      "score": "50",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Usability": {
+      "name": "Usability",
+      "score": "74",
+      "color": "rgb(109, 231, 130)"
+    },
+    "Attention": {
+      "name": "Attention",
+      "score": "42",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Involvement": {
+      "name": "Involvement",
+      "score": "50",
+      "color": "rgb(255, 201, 2)"
+    }
+  },
+  "myUxMetrics": {
+    "Endurability": {
+      "name": "Endurability",
+      "score": "52",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Novelty": {
+      "name": "Novelty",
+      "score": "53",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Aesthetics": {
+      "name": "Aesthetics",
+      "score": "51",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Usability": {
+      "name": "Usability",
+      "score": "74",
+      "color": "rgb(109, 231, 130)"
+    },
+    "Attention": {
+      "name": "Attention",
+      "score": "43",
+      "color": "rgb(255, 201, 2)"
+    },
+    "Involvement": {
+      "name": "Involvement",
+      "score": "50",
+      "color": "rgb(255, 201, 2)"
+    }
+  }
+}

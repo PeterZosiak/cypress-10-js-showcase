@@ -1,0 +1,42 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "cypress/globals": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:cypress/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+        "cy": "readonly",
+        "Cypress": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "cypress"
+    ],
+    "rules": {
+        "comma-dangle": "off",
+        "max-lines": 0,
+        "operator-linebreak": "off",
+        "cypress/no-unnecessary-waiting": "off",
+        "cypress/unsafe-to-chain-command": 0,
+        "chai-friendly/no-unused-expressions": 0,
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "ignoreChainWithDepth": 0,
+        "import/no-named-as-default": "off",
+        "import/prefer-default-export": "off"
+    }
+}

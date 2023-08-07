@@ -1,0 +1,37 @@
+{
+  "name": "testing",
+  "author": "Alex Pliutau",
+  "license": "",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@percy/cli": "1.24.0",
+    "@percy/cypress": "^3.1.2",
+    "cypress-qase-reporter": "^1.4.2-alpha.3",
+    "cypress-real-events": "^1.7.6",
+    "mocha": "^10.2.0"
+  },
+  "devDependencies": {
+    "cypress": "^10.10.0",
+    "cypress-file-upload": "^5.0.8",
+    "eslint": "^8.43.0",
+    "eslint-plugin-cypress": "^2.13.2",
+    "husky": "^8.0.3"
+  },
+  "scripts": {
+    "test": "cypress run",
+    "test:staging": "cypress run --browser electron --headless --env name=staging",
+    "test:prod": "cypress run --browser electron --headless --env name=prod",
+    "test:staging:record": "cypress run --browser electron --headless --env name=staging --record --key f46b270b-9378-4eef-9975-4cb1368254ca --tag 'staging'",
+    "test:prod:record": "cypress run --browser electron --headless --env name=prod --record --key f46b270b-9378-4eef-9975-4cb1368254ca --tag 'production'",
+    "vis-diff:staging": "percy exec -- cypress run --env name=staging --browser electron --headless --quiet",
+    "vis-diff:prod": "PERCY_BRANCH=master percy exec -- cypress run --env name=prod --browser electron --headless --quiet",
+    "open": "cypress open",
+    "open:staging": "cypress open --env name=staging",
+    "open:prod": "cypress open --env name=prod",
+    "lint": "eslint --ext \"**/*.js\" --config ./.eslintrc.json",
+    "lint-prepush": "yarn lint",
+    "prepare": "husky install"
+  }
+}

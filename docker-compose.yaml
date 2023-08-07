@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+    testing:
+        restart: "no"
+        build:
+            context: .
+        environment:
+            - ENV=local
+            - SLACK_ALERTS=false
+            - SLACK_WEBHOOK_URL=
+            - SLACK_CHANNEL=
+            - SLACK_USERNAME=
+            - CYPRESS_BASE_URL=PRIVATE_DATA
+        volumes:
+            - ./sa.json:/api/service-account-key.json
+
